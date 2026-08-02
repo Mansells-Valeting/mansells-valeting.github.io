@@ -41,8 +41,10 @@
     bottom:-12%;
     width:640px;
     height:640px;
+    object-fit:contain;
     opacity:0.05;
     pointer-events:none;
+    filter:brightness(0) invert(1);
   }
 
   .card{
@@ -165,17 +167,13 @@
 </head>
 <body>
 
-  <svg class="watermark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <path d="M100 10 C100 10 40 100 40 140 C40 173 67 190 100 190 C133 190 160 173 160 140 C160 100 100 10 100 10 Z"
-      fill="none" stroke="#c7d3e0" stroke-width="1.5"/>
-  </svg>
+  <img class="watermark" src="logo.png" alt="">
+
 
   <main class="card">
     <div class="brand">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C12 2 4.5 12 4.5 16.5C4.5 20.6 7.9 22.5 12 22.5C16.1 22.5 19.5 20.6 19.5 16.5C19.5 12 12 2 12 2Z"
-          stroke="#3fb6c9" stroke-width="1.6" fill="rgba(63,182,201,0.08)"/>
-      </svg>
+      <img src="logo.png" alt="" style="height:26px;width:auto;">
+
       <span>Mansell's Valeting</span>
     </div>
 
