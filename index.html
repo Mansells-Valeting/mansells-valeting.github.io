@@ -1,64 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mansell's Valeting</title>
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #0f172a;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 2rem;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mansell's Valeting</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap');
 
-        html, body {
-        height: 100%;
-        overflow: hidden;
-        }
+  :root{
+    --navy-1:#0d1f38;
+    --navy-2:#12315c;
+    --navy-3:#1c4a80;
+    --mist:#c7d3e0;
+    --chrome:#f3f6fa;
+    --amber:#f6a821;
+    --amber-2:#e8941a;
+    --droplet:#3fb6c9;
+  }
 
-        .card {
-            max-width: 600px;
-        }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ height:100%; }
 
-        .logo {
-            width: 160px;
-            height: auto;
-            margin-bottom: 0.5rem;
-        }
+  body{
+    background:
+      radial-gradient(circle at 78% 65%, rgba(63,182,201,0.10), transparent 45%),
+      linear-gradient(160deg, var(--navy-1) 0%, var(--navy-2) 55%, var(--navy-3) 100%);
+    color:var(--chrome);
+    font-family:'Inter', sans-serif;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
 
-        h1 {
-            font-size: 3rem;
-            font-weight: 300;
-            margin: 0 0 1rem 0;
-        }
+  .watermark{
+    position:fixed;
+    right:-8%;
+    bottom:-12%;
+    width:640px;
+    height:640px;
+    opacity:0.05;
+    pointer-events:none;
+  }
 
-        p {
-            color: rgba(255,255,255,0.75);
-            line-height: 1.7;
-        }
-    </style>
+  .card{
+    position:relative;
+    z-index:1;
+    width:min(600px, 88vw);
+    text-align:center;
+    padding:60px 40px 48px;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:44px;
+  }
+
+  .brand svg{ width:26px; height:26px; }
+
+  .brand span{
+    font-family:'Playfair Display', serif;
+    font-size:19px;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
+
+  h1{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:clamp(38px, 6.4vw, 54px);
+    line-height:1.12;
+    letter-spacing:-0.01em;
+    color:var(--chrome);
+    margin-bottom:22px;
+  }
+
+  h1 em{
+    font-style:normal;
+    color:var(--mist);
+  }
+
+  p.lead{
+    font-size:16px;
+    line-height:1.7;
+    color:var(--mist);
+    max-width:440px;
+    margin:0 auto 36px;
+  }
+
+  .status{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    letter-spacing:0.04em;
+    color:var(--mist);
+    margin-bottom:34px;
+    padding:8px 16px;
+    border:1px solid rgba(199,211,224,0.18);
+    border-radius:999px;
+    background:rgba(255,255,255,0.03);
+  }
+
+  .status .dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--droplet);
+    animation:pulse 2s infinite;
+  }
+
+  @keyframes pulse{
+    0%   { box-shadow:0 0 0 0 rgba(63,182,201,0.5); }
+    70%  { box-shadow:0 0 0 8px rgba(63,182,201,0); }
+    100% { box-shadow:0 0 0 0 rgba(63,182,201,0); }
+  }
+
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:linear-gradient(135deg, var(--amber), var(--amber-2));
+    color:#20140a;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:10px;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow:0 10px 26px rgba(246,168,33,0.22);
+  }
+
+  .cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 30px rgba(246,168,33,0.3);
+  }
+
+  .cta:focus-visible{
+    outline:2px solid var(--chrome);
+    outline-offset:3px;
+  }
+
+  .cta svg{ width:16px; height:16px; }
+
+  footer{
+    margin-top:44px;
+    font-size:12px;
+    color:rgba(199,211,224,0.45);
+  }
+
+  @media (max-width:480px){
+    .card{ padding:44px 22px 36px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .status .dot{ animation:none; }
+  }
+</style>
 </head>
 <body>
-    <div class="card">
 
-        <img class="logo" src="logo.png" alt="Mansell's Valeting logo">
+  <svg class="watermark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="M100 10 C100 10 40 100 40 140 C40 173 67 190 100 190 C133 190 160 173 160 140 C160 100 100 10 100 10 Z"
+      fill="none" stroke="#c7d3e0" stroke-width="1.5"/>
+  </svg>
 
-        <h1>Mansell's Valeting</h1>
-
-        <p>
-            Our website is currently undergoing improvements.
-            We apologise for any inconvenience and look forward
-            to welcoming you back shortly. If you believe that this is a
-            mistake please contact us via our Facebook.
-        </p>
-
+  <main class="card">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C12 2 4.5 12 4.5 16.5C4.5 20.6 7.9 22.5 12 22.5C16.1 22.5 19.5 20.6 19.5 16.5C19.5 12 12 2 12 2Z"
+          stroke="#3fb6c9" stroke-width="1.6" fill="rgba(63,182,201,0.08)"/>
+      </svg>
+      <span>Mansell's Valeting</span>
     </div>
+
+    <h1>A quick polish,<br><em>then we're back.</em></h1>
+
+    <p class="lead">
+      We're giving the site a proper going-over. Bookings will be back
+      online shortly — in the meantime, get in touch directly and we'll
+      sort you out.
+    </p>
+
+    <div class="status">
+      <span class="dot"></span>
+      Site under maintenance
+    </div>
+
+    <div>
+      <a class="cta" href="tel:07720175330">
+        Call 07720 175330
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <footer>&copy; 2026 Mansell's Valeting &middot; Devon</footer>
+  </main>
+
 </body>
 </html>
