@@ -20,11 +20,6 @@ export function Process() {
                   <div className="w-16 h-16 rounded-2xl gradient-brand flex items-center justify-center text-2xl shadow-lg shadow-brand-400/20">
                     {step.icon}
                   </div>
-                  {i < process.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-full w-12 h-0.5 bg-border">
-                      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rotate-45 border-t-2 border-r-2 border-border" />
-                    </div>
-                  )}
                 </div>
                 <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-brand-50 text-brand-400 text-xs font-bold mb-3">
                   {i + 1}
