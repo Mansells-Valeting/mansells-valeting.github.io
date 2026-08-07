@@ -40,27 +40,27 @@ export const services: Service[] = [
 
 export const testimonials: Testimonial[] = [
   {
-    name: 'James Mitchell',
+    name: 'Babs Allen',
     role: 'Totnes',
-    content: "Absolutely brilliant service. My car hasn't looked this good since I drove it off the forecourt. Attention to detail is incredible — and they came right to my house.",
+    content: "What a service! Transforming the interior of my landy from dirty to divine! So pleased with the result, and highly recommend Nigel’s work. Think it looks better now than when it was new!",
     rating: 5
   },
   {
-    name: 'Sarah Thompson',
+    name: 'Emma Williams',
     role: 'Newton Abbot',
-    content: "Was sceptical about mobile valeting but Mansell's proved me wrong. Came to my home in Newton Abbot and the results were outstanding. Highly recommend.",
+    content: "We are so pleased with how our driveway has come up. Nigel took great care and did an amazing job! It's like new again. I would highly recommend to anyone wanting their drives or paths to look like new, without having to re brick, slab, etc. Thank you Nigel you've done such an amazing job!",
     rating: 5
   },
   {
     name: 'David Richards',
-    role: 'Torbay',
-    content: "The full valet is worth every penny. Spent a good few hours on my car and it looked better than new. Will definitely be a regular.",
+    role: 'Teignmouth',
+    content: "Headlight polishing today in Teignmouth. Really really pleased. Professional, reliable and great value. I would highly recommend. My Beetle will be driving at night with more than candle power to light the way thanks to Nigel. Amazing results the headlights have changed from dull, cloudy and yellow to crystal clear once more. Thank you so much.",
     rating: 5
   },
   {
-    name: 'Emma Walker',
-    role: 'Paignton',
-    content: "Convenient, professional, and the quality is top-notch. The online booking made it so easy to schedule. Already booked my next one.",
+    name: 'Stephanie Dibble',
+    role: 'Yelverton',
+    content: "Highly recommend Mansell’s Valeting. He has cleaned our car to perfection. The attention to detail was amazing and we will 100% be using him again for our other car. Our car now looks brand new. Thank you!",
     rating: 5
   }
 ]
